@@ -1,12 +1,14 @@
 {% extends "_layouts/auth.njk" %}
 
 {% block body %}
-				<form action="/signin" method="post">
+			<form action="/signin" method="post">
 
-								<img src="/images/logo.svg" height="42"/>
-								<input type="email" name="email" placeholder="Seu E-mail"/>
-								<input type="password" name="password" placeholder="Sua Senha"/>
-								<button type="submit">Entrar</button>
-								<a href="/signup">Criar conta gratuíta!</a>
-				</form>
+						<img src="/images/logo.svg" height="42"/>
+
+						{% include "_partials/flash.njk" %}
+						<input type="email" name="email" placeholder="Seu E-mail"/>
+						<input type="password" name="password" placeholder="Sua Senha"/>
+						<button type="submit">Entrar</button>
+						<a href="/signup">Criar conta gratuíta!</a>
+			</form>
 {% endblock body%}
