@@ -1,12 +1,12 @@
 module.exports = (sequelize, datatypes) => {
-	const agendamento = sequelize.define("Agendamento", {
+	const Agendamento = sequelize.define("Agendamento", {
 		date: datatypes.DATE
 	});
 
-	agendamento.associate = models => {
-		agendamento.belongsTo(models.User, { foreignKey: "user_id" });
-		agendamento.belongsTo(models.User, { foreignKey: "provider_id" });
+	Agendamento.associate = models => {
+		Agendamento.belongsTo(models.User, { foreignKey: "user_id" });
+		Agendamento.belongsTo(models.User, { foreignKey: "provider_id" });
 	};
 
-	return agendamento
+	return Agendamento;
 };

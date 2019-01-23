@@ -22,6 +22,7 @@ const SessionController = require("./app/controllers/SessionController");
 const DashboardController = require("./app/controllers/DashboardController");
 const FileController = require("./app/controllers/FileController");
 const AgendamentoController = require("./app/controllers/AgendamentoController");
+const AvailableController = require("./app/controllers/AvaliableController");
 
 //rota generica para visualizar qualquer tipo de arquivo
 routes.get("/files/:file", FileController.show);
@@ -44,5 +45,7 @@ routes.get("/app/logout", SessionController.destroy);
 
 //agendar barbeiro
 routes.get("/app/agendamentos/new/:provider", AgendamentoController.create);
+routes.post("/app/agendamentos/new/:provider", AgendamentoController.store);
+routes.get("/app/available/:provider", AvailableController.index);
 
 module.exports = routes;
